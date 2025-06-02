@@ -13,7 +13,7 @@ body {
 }
 
 html {
-  background: linear-gradient(180deg, #ea03ff 0%, #0097ff 100%);
+  background-color: #81d340;
 }
 
 input:focus {
@@ -30,14 +30,14 @@ input:focus {
 }
 
 #register-banner {
-  background: url("../img/bg-form.jpg");
+  background: url("../img/telefone-movel-3d-com-cadeado-de-codigo-de-seguranca.jpg");
   background-size: cover;
   background-position: center;
   width: 50%;
 }
 
 #banner-layer {
-  background-color: rgba(25, 11, 122, 0.7);
+  background-color: #82d3406c;
   height: 100%;
   padding: 2rem;
   display: flex;
@@ -60,6 +60,7 @@ input:focus {
 }
 
 #register-form h2 {
+  color:#81d340;
   text-align: center;
   margin-bottom: 1rem;
   font-size: 2.2rem;
@@ -69,7 +70,7 @@ input:focus {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #aaa;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .form-control {
@@ -96,11 +97,11 @@ input:focus {
 }
 
 #open-generate-password:hover {
-  color: #0099ff;
+  color: #81d340;
 }
 
 #register-form #generated-password {
-  border: 1px solid #0099ff;
+  border: 1px solid #81d340;
   border-radius: 4px;
   font-weight: bold;
   font-size: 1.2rem;
@@ -117,7 +118,7 @@ input:focus {
 }
 
 #register-form input[type="submit"],
-#generate-options button,
+#gerador button,
 #copy-password {
   background-color: #81d340;
   color: #fff;
@@ -136,30 +137,30 @@ input:focus {
 }
 
 /* Segunda versão */
-#generate-options {
+#gerador {
   margin-bottom: 1rem;
   padding: 1rem;
   border: 1px solid #ddd;
 }
 
-#generate-options .form-control {
+#gerador .form-control {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-#generate-options label {
+#gerador label {
   font-size: 0.8rem;
 }
 
-#generate-options input[type="text"] {
+#gerador input[type="text"] {
   max-width: 30px;
   text-align: center;
   border: 1px solid #ccc;
 }
 
-#generate-options button {
-  background-color: #0097ff;
+#gerador button {
+  background-color: #81d340;
   display: block;
   margin: 0 auto;
 }
@@ -172,6 +173,56 @@ input:focus {
   padding: 0.5rem 1rem;
 }
 
-.hide {
-  display: none;
+#butoes button{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #81d340; 
+  color:#fff;
+  margin: 2px auto;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+#btnValidador:hover {
+  border-color: #007bff;
+}
+#btnValidador:focus {
+   outline: none;
+  }
+#btnValidador:active {
+  border-color: #28a745;         
+  background-color: #e6ffe6;     
+  color: #000;
+  }
+#btnGerador:hover {
+  border-color: #007bff;
+}
+#btnGerador:focus {
+   outline: none;
+  }
+#btnGerador:active {
+  border-color: #28a745;         
+  background-color: #e6ffe6;     
+  color: #000;
+  }
+
+#botaoValidar { 
+  background-color: #81d340;
+  padding: 5px;
+  margin-left: 5px;
+  color: #Fff;
+  border-radius: 5px;
+
+}
+#senha{
+  padding: 5px;
+}
+
+#mensagem-erro{
+  margin-top: 10px;  
+  font-size: 14px;
+  color: red;
 }
