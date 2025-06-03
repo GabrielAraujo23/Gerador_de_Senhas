@@ -18,21 +18,19 @@
     <div id="register-container">
       <div id="register-banner">
         <div id="banner-layer">
-          <h1>Seja bem-vindo</h1>
+          <h1>Seja<br>bem-vindo</h1>
         </div>
       </div>
-      <!-- Gerador -->
+      
       <div id="register-form">
           <h2>Senha Forte</h2><br>
 
-          <div id="butoes">
-
-            <button id="btnValidador" onclick="showValidador()">Validador</button>
-    
+          <div class="menu-botoes" id="butoes">
             <button id="btnGerador" onclick="showGerador()">Gerador</button>
-    
-        </div>          
-        </p>
+            <button id="btnValidador" onclick="showValidador()">Validador</button>
+            <button id="btnGerarHash" type="button" onclick="showHash()">Gerar Hash</button>
+          </div>          
+        
         <div id="gerador">
           <p>Selecione as opções que você deseja</p>
           <div class="form-control">
@@ -40,7 +38,7 @@
             <input type="text" id="length" name="length" value="10" />
           </div>
           <div class="form-control">
-            <label for="letters">Letras:</label>
+            <label for="letters">Letras (Maiúsculas e Minúsculas):</label>
             <input type="checkbox" id="letters" name="letters" checked />
           </div>
           <div class="form-control">
@@ -53,31 +51,41 @@
           </div>
           <button id="generate-password">Criar senha</button>
         </div>
-        <!-- Validador  -->
+        
         <div id="validador">
-          
-          <form onsubmit="">
-            <h3>Validador</h3>
-        <label>Insira Senha:</label>
-        <input type="text" id="senha" placeholder="Digite a senha">
-        <button type="button" id = "botaoValidar" onclick="validarSenha(event)">Validar</button>
-        <div id="mensagem-erro"></div>
-
+          <h3>Validador de Senha</h3>
+          <div> 
+            <label for="senha">Insira Senha:</label>
+            <input type="text" id="senha" placeholder="Digite a senha">
+            <button type="button" id="botaoValidar" onclick="validarSenha(event)">Validar</button>
+            <div id="mensagem-erro"></div>
+          </div>
         </div>
+
         <div id="generated-password">
           <p>Aqui está a sua senha:</p>
           <h4></h4>
           <button id="copy-password">Copiar</button>
         </div>
+
         <div id="nivel-validacao">
           <br>
           <h4></h4>
-          <ul id = "niveis">
-            <li>Nível 0 = vazio</li>
-            <li>Nível 1 = Tem letra maiúscula</li>
-            <li>Nível 2 = Tem número</li>
-            <li>Nível 3 = Tem caractere especial</li>
+          <ul id="niveis">
+            <li>Nível 0 = Vazio ou menos de 7 caracteres</li>
+            <li>Nível 1 = Contém letra maiúscula</li>
+            <li>Nível 2 = Contém número (além de maiúscula)</li>
+            <li>Nível 3 = Contém caractere especial (além de maiúscula e número)</li>
+            <li><small>Nota: A pontuação é cumulativa e considera a presença dos tipos de caracteres.</small></li>
           </ul>
+        </div>
+
+        <div id="hasheador">
+          <h3>Gerador de Hash SHA-256</h3>
+          <label for="input-hash">Digite a senha/palavra:</label>
+          <input id="input-hash" placeholder="Texto para hash"/>
+          <button onclick="gerarHash()">Gerar Hash</button>
+          <p id="resultado-hash"></p>
         </div>
       </div>
     </div>

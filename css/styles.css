@@ -1,228 +1,398 @@
-* {
-  font-family: "Montserrat", sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  color: #333;
-}
+      * {
+        font-family: "Montserrat", sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        color: #333;
+      }
 
-html,
-body {
-  height: auto;
-  min-height: 100vh;
-}
+      html,
+      body {
+        height: auto;
+        min-height: 100vh;
+      }
 
-html {
-  background-color: #81d340;
-}
+      html {
+        background-color: #81d340;
+      }
 
-input:focus {
-  outline: none;
-}
+      input:focus {
+        outline: none;
+      }
 
-#register-container {
-  max-width: 900px;
-  min-height: 80vh;
-  margin: 2rem auto;
-  display: flex;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
+      #register-container {
+        max-width: 900px;
+        min-height: 80vh;
+        margin: 2rem auto;
+        display: flex;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 8px; /* Added for overall container rounding */
+        overflow: hidden; /* Ensures child elements conform to border-radius */
+      }
 
-#register-banner {
-  background: url("../img/telefone-movel-3d-com-cadeado-de-codigo-de-seguranca.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 50%;
-}
+      #register-banner {
+        /* Changed to a placeholder image - replace with your local path if needed */
+        /* background: url("../img/telefone-movel-3d-com-cadeado-de-codigo-de-seguranca.jpg"); */
+        background-image: url("../img/telefone-movel-3d-com-cadeado-de-codigo-de-seguranca.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 50%;
+      }
 
-#banner-layer {
-  background-color: #82d3406c;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-}
+      #banner-layer {
+        background-color: #82d3406c; /* Semi-transparent overlay */
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the text */
+      }
 
-#register-banner h1 {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  word-spacing: 50rem;
-}
+      #register-banner h1 {
+        font-size: 4rem; /* Adjusted for better fit */
+        color: #fff;
+        text-align: start; /* Ensure text is centered */
+        word-spacing: normal; /* Resetting potentially problematic word-spacing */
+        line-height: 1.2;
+      }
 
-#register-form {
-  background-color: #fdfdfd;
-  padding: 2rem;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
+      #register-form {
+        background-color: #fdfdfd;
+        padding: 2rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
 
-#register-form h2 {
-  color:#81d340;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-}
+      #register-form h2 {
+        color:#81d340;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+      }
+      
+      #register-form h3 { /* Styling for subheadings in sections */
+        color: #555;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.3rem;
+      }
 
-#register-form p {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #aaa;
-  font-size: 1rem;
-}
 
-.form-control {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-}
+      #register-form p { /* General paragraph styling within the form area */
+        /* text-align: center; */ /* Centering might not be desired for all p tags */
+        margin-bottom: 1rem; /* Adjusted default margin */
+        color: #555; /* Slightly darker than #aaa for better readability */
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      
+      /* Specific styling for the intro paragraph in #gerador */
+      #gerador > p:first-of-type {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #aaa;
+        font-size: 1rem;
+      }
 
-.form-control label {
-  font-weight: bold;
-  margin-bottom: 0.6rem;
-}
 
-.form-control input {
-  border: none;
-  border-bottom: 1px solid #aaa;
-  padding: 0.6rem 0;
-}
+      .form-control {
+        margin-bottom: 1.2rem; /* Increased spacing */
+        display: flex;
+        flex-direction: column;
+      }
 
-#open-generate-password {
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.4s;
-}
+      .form-control label {
+        font-weight: bold;
+        margin-bottom: 0.6rem;
+        font-size: 0.9rem; /* Slightly smaller label */
+      }
 
-#open-generate-password:hover {
-  color: #81d340;
-}
+      .form-control input[type="text"],
+      .form-control input[type="checkbox"] { /* Unified styling for text inputs */
+        border: 1px solid #ccc; /* Unified border */
+        border-radius: 4px; /* Rounded corners */
+        padding: 0.6rem;
+        background-color: #fff; /* Ensure background is white */
+      }
+      
+      .form-control input[type="checkbox"] {
+        width: auto; /* Override width from text input */
+        margin-right: 8px;
+        vertical-align: middle;
+        padding: 0; /* Checkboxes don't need padding like text */
+        border: 1px solid #ccc; /* Keep border consistent */
+      }
 
-#register-form #generated-password {
-  border: 1px solid #81d340;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.4rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 1rem;
-  display: none;
-}
 
-#register-form #generated-password p {
-  color: #81d340;
-  margin-bottom: 0.5rem;
-}
+      /* This ID was in your CSS but not in HTML, can be removed or used if element is added */
+      /* #open-generate-password {
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.4s;
+      }
 
-#register-form input[type="submit"],
-#gerador button,
-#copy-password {
-  background-color: #81d340;
-  color: #fff;
-  opacity: 0.8;
-  border: none;
-  border-radius: 2rem;
-  padding: 1rem 1.4rem;
-  max-width: 150px;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: 0.4s;
-}
+      #open-generate-password:hover {
+        color: #81d340;
+      } */
 
-#register-form input[type="submit"]:hover {
-  opacity: 1;
-}
+      #register-form #generated-password,
+      #register-form #nivel-validacao,
+      #register-form #hasheador,
+      #register-form #validador,
+      #register-form #gerador { /* Common styling for content sections */
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: 1rem;
+        margin-top: 1.5rem; /* Spacing between sections */
+        background-color: #f9f9f9;
+      }
+      
+      /* Initially hide sections that are shown by JS */
+      /* #generated-password is already display: none from user CSS below */
+      #gerador, #validador, #hasheador, #nivel-validacao {
+          display: none;
+      }
 
-/* Segunda versão */
-#gerador {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-}
+      #register-form #generated-password { /* User's original rule */
+        border: 1px solid #81d340;
+        border-radius: 4px;
+        /* font-weight: bold; */ /* Handled by h4 */
+        /* font-size: 1.2rem; */ /* Handled by h4 */
+        padding: 1rem; /* Unified padding */
+        /* color: #333; */ /* Default color */
+        text-align: left; /* Usually better for results */
+        margin-bottom: 1rem;
+        display: none; /* Initially hidden */
+      }
 
-#gerador .form-control {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+      #register-form #generated-password p,
+      #register-form #nivel-validacao p { /* Text before the result */
+        color: #81d340;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      
+      #register-form #generated-password h4,
+      #register-form #nivel-validacao h4,
+      #register-form #resultado-hash { /* Styling for result display areas */
+        background-color: #e9ecef;
+        padding: 0.75rem;
+        border-radius: 4px;
+        word-break: break-all;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ced4da;
+      }
+      #register-form #resultado-hash {
+        font-family: monospace; /* Good for hashes */
+        margin-top: 0.5rem;
+      }
 
-#gerador label {
-  font-size: 0.8rem;
-}
 
-#gerador input[type="text"] {
-  max-width: 30px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
+      #register-form input[type="submit"], /* General submit, not used here */
+      #gerador button, /* Button inside generator section */
+      #validador button, /* Button inside validator section */
+      #hasheador button, /* Button inside hasher section */
+      #copy-password {   /* Copy button */
+        background-color: #81d340;
+        color: #fff;
+        opacity: 0.9; /* Slightly less opaque */
+        border: none;
+        border-radius: 0.25rem; /* Standardized border-radius */
+        padding: 0.75rem 1.2rem; /* Adjusted padding */
+        /* max-width: 150px; */ /* Removed max-width for flexibility */
+        cursor: pointer;
+        align-self: flex-start; /* Align to start or center as needed */
+        transition: opacity 0.3s ease, background-color 0.3s ease;
+        font-weight: 500;
+        margin-top: 0.5rem; /* Spacing above button */
+      }
+      
+      #gerador button, #validador button, #hasheador button {
+          align-self: center; /* Center buttons within their sections */
+          min-width: 150px; /* Ensure a decent width */
+      }
 
-#gerador button {
-  background-color: #81d340;
-  display: block;
-  margin: 0 auto;
-}
 
-#copy-password {
-  margin: 1rem auto;
-  background-color: transparent;
-  border: 2px solid #81d340;
-  color: #81d340;
-  padding: 0.5rem 1rem;
-}
+      #register-form input[type="submit"]:hover,
+      #gerador button:hover,
+      #validador button:hover,
+      #hasheador button:hover,
+      #copy-password:hover {
+        opacity: 1;
+        background-color: #72bf3a; /* Darken on hover */
+      }
 
-#butoes button{
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  background-color: #81d340; 
-  color:#fff;
-  margin: 2px auto;
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 5px;
-}
+      /* Segunda versão (gerador specific) */
+      #gerador { /* Already styled above */
+        /* margin-bottom: 1rem; */
+        /* padding: 1rem; */
+        /* border: 1px solid #ddd; */
+      }
 
-#btnValidador:hover {
-  border-color: #007bff;
-}
-#btnValidador:focus {
-   outline: none;
-  }
-#btnValidador:active {
-  border-color: #28a745;         
-  background-color: #e6ffe6;     
-  color: #000;
-  }
-#btnGerador:hover {
-  border-color: #007bff;
-}
-#btnGerador:focus {
-   outline: none;
-  }
-#btnGerador:active {
-  border-color: #28a745;         
-  background-color: #e6ffe6;     
-  color: #000;
-  }
+      #gerador .form-control {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-#botaoValidar { 
-  background-color: #81d340;
-  padding: 5px;
-  margin-left: 5px;
-  color: #Fff;
-  border-radius: 5px;
+      #gerador label { /* Label in generator options */
+        font-size: 0.9rem; /* Consistent with other labels */
+        font-weight: normal; /* Less emphasis than main labels */
+      }
 
-}
-#senha{
-  padding: 5px;
-}
+      #gerador input[type="text"] { /* Length input */
+        max-width: 50px; /* Slightly wider */
+        text-align: center;
+        border: 1px solid #ccc; /* Consistent border */
+        padding: 0.4rem; /* Adjusted padding */
+      }
 
-#mensagem-erro{
-  margin-top: 10px;  
-  font-size: 14px;
-  color: red;
-}
+      /* #gerador button is styled with the general button rules */
+      /* #gerador button {
+        background-color: #81d340;
+        display: block;
+        margin: 0 auto;
+      } */
+
+      #copy-password {
+        margin: 1rem auto; /* Center copy button */
+        display: block; /* Make it block to center with margin auto */
+        background-color: transparent;
+        border: 2px solid #81d340;
+        color: #81d340;
+        padding: 0.6rem 1.2rem;
+      }
+      #copy-password:hover {
+          background-color: #e6f7d9; /* Light green background on hover */
+          color: #5a9a2c; /* Darker text */
+      }
+
+
+      .menu-botoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; /* Better spacing */
+        margin-top: 10px; /* Reduced margin */
+        margin-bottom: 25px; /* Increased margin */
+        gap: 10px; /* Space between buttons */
+      }
+
+      #butoes button{ /* Tab navigation buttons */
+        flex-grow: 1; /* Allow buttons to grow equally */
+        /* display: flex; */ /* Not needed with flex-grow */
+        /* justify-content: center; */ /* Text is centered by default */
+        /* width: 120px; */ /* Removed fixed width */
+        /* gap: 10px; */ /* Not applicable here */
+        background-color: #81d340; 
+        color:#fff;
+        /* margin: 2px auto; */ /* Handled by flex gap/justify */
+        padding: 12px 15px; /* Increased padding */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        border: none; /* Remove default border */
+        font-weight: 500;
+      }
+      
+      #butoes button:disabled {
+        background-color: #a8d888; /* Lighter green when disabled */
+        color: #f0f0f0;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+
+      #butoes button:not(:disabled):hover { /* Hover for non-disabled tab buttons */
+        background-color: #72bf3a; /* Darken */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      
+      /* Specific active states from user CSS */
+      /* These :active styles might be too subtle or override hover, adjust if needed */
+      #btnValidador:active, #btnGerador:active, #btnGerarHash:active {
+        border-color: #28a745;         
+        background-color: #e6ffe6;     
+        color: #000;
+      }
+      /* Removing focus outline for tab buttons if desired, but generally good for accessibility */
+      /* #btnValidador:focus, #btnGerador:focus, #btnGerarHash:focus {
+         outline: none;
+      } */
+
+
+      #botaoValidar { /* Specific button in validator section */
+        /* background-color: #81d340; */ /* Handled by general button style */
+        /* padding: 5px; */ /* Handled by general button style */
+        /* margin-left: 5px; */ /* Add if needed, or use gap on parent */
+        /* color: #Fff; */ /* Handled by general button style */
+        /* border-radius: 5px; */ /* Handled by general button style */
+      }
+      #senha{ /* Input field in validator */
+        padding: 0.6rem; /* Consistent padding */
+        width: calc(100% - 12px); /* Full width minus padding */
+      }
+
+      #mensagem-erro{
+        margin-top: 10px;  
+        font-size: 0.9em;
+        color: red;
+        font-weight: bold;
+      }
+      
+      #nivel-validacao ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0.5rem;
+      }
+      #nivel-validacao ul li {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 0.3rem;
+      }
+      #nivel-validacao ul li small {
+        display: block;
+        margin-top: 0.5rem;
+        color: #777;
+        font-style: italic;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        #register-container {
+          flex-direction: column;
+          margin: 1rem auto;
+          min-height: 95vh;
+        }
+        #register-banner, #register-form {
+          width: 100%;
+        }
+        #register-banner {
+          min-height: 200px; /* Ensure banner has some height */
+          max-height: 30vh;
+        }
+        #register-banner h1 {
+          font-size: 2.5rem;
+        }
+        #register-form {
+          padding: 1.5rem;
+        }
+        .menu-botoes {
+          flex-direction: column; /* Stack tab buttons on small screens */
+        }
+        #butoes button {
+            margin-bottom: 8px; /* Space between stacked buttons */
+        }
+        #gerador .form-control {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        #gerador input[type="text"] {
+            max-width: 100px; /* Allow more width for length on mobile */
+            margin-top: 5px;
+        }
+      }
